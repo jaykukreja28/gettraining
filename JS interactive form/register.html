@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         
+        function validate(){
+           
+            /* if(username.value.trim()==""||userpass.value.trim()==""){
+               // alert("username password cannot be empty.");
+
+
+                return false;
+
+            }
+            else{
+                return true;
+        */
+            } 
+        
+
+            function checkUserName(){
+
+                 var username=document.getElementById( "userName");
+                 var userpass=document.getElementById("userPass");
+                if(username.value.trim()=="")
+                {
+                    username.style.border="2px solid red";
+                    document.getElementById("nameError").innerText="username is empty";
+                    document.getElementById("nameError").style.visibility="visible";
+                }
+                else{
+                    username.style.border="1px solid black";
+                    document.getElementById("nameError").style.visibility="hidden";
+
+                }
+            }
+            function checkPass(){
+                  var username=document.getElementById( "userName");
+                  var userpass=document.getElementById("userPass");
+
+                if(userpass.value.trim()==""){
+                    userpass.style.border="2px solid red";
+                    document.getElementById("passError").innerText="passwords is empty";
+                    document.getElementById("passError").style.visibility="visible";
+                     //return false;
+                }
+                else{
+                    userpass.style.border="1px solid black";
+                    document.getElementById("passError").style.visibility="hidden";
+                }
+            }
+
+            function nameFocus(){
+                document.getElementId("nameError").style.visibility="hidden";
+            }
+            function passFocus(){
+                document.getElementById("passError").style.visibility="hidden";
+            }
+
+            function validateMobile(event){
+                if(isNaN(event.key )|| event.key==" "){
+                    event.preventDefault(); //prevent the event to occur
+                    document.getElementById('mbError').innerText="only numbers allowed";
+                }
+                else{
+                    document.getElementById('mbError').innerText= "";
+                }
+            }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validate()" action="success.html">
+        <input type="text" id="userName" onblur="checkUserName()" onfocus="nameFocus()"/>
+        
+        <span id="nameError" style="color: red;visibility:hidden;"></span>
+        <br><br>
+        <input type="password" id="userPass" onblur="checkPass()" onfocus="passFocus()"/><br><br>
+        <span id="passError" style="color: red;visibility:hidden;"></span>
+       
+       <input type="text" id="mb"  onkeypress="validateMobile(event)"/>
+        <span id ="mbError"></span>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>

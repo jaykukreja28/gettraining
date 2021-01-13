@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function imageChange1(){
+            var img=document.getElementById("img");
+            img.src="../images/lti.png";
+        }
+        function imageChange2(){
+            var img=document.getElementById("img");
+            img.src="../images/lti.jpg";
+        }
+
+    </script>
+</head>
+<body>
+   <img id="img" onmouseover="imageChange1()" 
+   onmouseout="imageChange2()"
+   src="../Images/lti.jpg" style ="width: 250px; height: 200px; border:2px solid black;"alt=" "/> 
+</body>
+</html>

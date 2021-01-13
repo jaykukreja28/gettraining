@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showCity(){
+            var ct=document.getElementById("ct");
+            document.getElementById("item").innerText=ct[ct.selectedIndex].value;
+        }
+    </script>
+</head>
+<body>
+   <select id="ct" onchange="showCity()">
+       <option value="CCU">Kolkata</option>
+       <option value="DEL">New Delhi</option>
+       <option value="BOM">Mumbai</option>
+       <option value="IXR">Ranchi</option>
+   </select> 
+   <div id="item">
+       not selected
+   </div>
+   <!--<button onclick="showCity()">print</button>-->
+</body>
+</html>
